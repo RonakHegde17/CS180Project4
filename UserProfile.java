@@ -51,7 +51,7 @@ public class UserProfile {
         this.friends = friends;
     }
 
-        public ArrayList<UserProfile> getBlocked() {
+    public ArrayList<UserProfile> getBlocked() {
         return blocked;
     }
 
@@ -59,8 +59,9 @@ public class UserProfile {
         this.blocked = blocked;
     }
 
-        public String toString() {
-        return "Username: " + username + "\n" + "Email: " + email + "\n" + "Password: " + password + "\n" + "Friends: " + friends.size();
+    public String toString() {
+        return "Username: " + username + "\n" + "Email: " + email + "\n" + "Password: " + password + "\n" + "Friends: " + friends.size() + "\n" + "Blocked: " + blocked + "\n" + "---------------";
     }
+
 
 }
