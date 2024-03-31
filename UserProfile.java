@@ -58,6 +58,25 @@ public class UserProfile {
     public void setBlocked(ArrayList<UserProfile> blocked) {
         this.blocked = blocked;
     }
+        public void addFriend(UserProfile friend) {
+        if (!friends.contains(friend)) {
+            friends.add(friend);
+        }
+    }
+
+    public void removeFriend(UserProfile friend) {
+        friends.remove(friend);
+    }
+
+    public void addBlocked(UserProfile user) {
+        if (!blocked.contains(user)) {
+            blocked.add(user);
+        }
+    }
+
+    public void unblock(UserProfile user) {
+        blocked.remove(user);
+    }
 
     public String toString() {
         return "Username: " + username + "\n" + "Email: " + email + "\n" + "Password: " + password + "\n" + "Friends: " + friends.size() + "\n" + "Blocked: " + blocked + "\n" + "---------------" + "\n";
