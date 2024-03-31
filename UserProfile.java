@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class UserProfile {
+public class UserProfile implements UserProfileInterface {
     private String username;
 
     private String email;
