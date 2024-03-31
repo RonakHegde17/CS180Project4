@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class Database {
+public class Database implements DatabaseInterface{
     private ArrayList<UserProfile> users;
     private String userIn;
 
@@ -27,6 +27,18 @@ public class Database {
             return true;
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
     }
+
+    public ArrayList<UserProfile> searchUsers(String userSearch) {
+        ArrayList<UserProfile> possibleUsers = new ArrayList<>();
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getUsername().contains(userSearch)) {
+                possibleUsers.add(users.get(i));
+            }
+        }
+        return possibleUsers;
+    }
+
 }
