@@ -9,11 +9,14 @@ public class UserProfile {
 
     private ArrayList<UserProfile> friends;
 
+    private ArrayList<UserProfile> blocked;
+
     public UserProfile(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.friends = new ArrayList<UserProfile>();
+        this.blocked = new ArrayList<UserProfile>();
     }
 
     public String getUsername() {
@@ -46,6 +49,14 @@ public class UserProfile {
 
     public void setFriends(ArrayList<UserProfile> friends) {
         this.friends = friends;
+    }
+
+        public ArrayList<UserProfile> getBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(ArrayList<UserProfile> blocked) {
+        this.blocked = blocked;
     }
 
 }
