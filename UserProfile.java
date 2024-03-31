@@ -59,4 +59,8 @@ public class UserProfile {
         this.blocked = blocked;
     }
 
+        public String toString() {
+        return "Username: " + username + "\n" + "Email: " + email + "\n" + "Password: " + password + "\n" + "Friends: " + friends.size();
+    }
+
 }
