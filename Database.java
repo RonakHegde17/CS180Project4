@@ -41,4 +41,11 @@ public class Database implements DatabaseInterface{
         return possibleUsers;
     }
 
+    public String viewUser(UserProfile user) {
+        if (users.contains(user)) {
+            return user.toString();
+        } else {
+            return "User Does Not Exist\n";
+        }
+    }
 }
