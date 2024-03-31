@@ -19,6 +19,15 @@ public class UserProfile {
         this.blocked = new ArrayList<UserProfile>();
     }
 
+    public UserProfile() {
+        this.username = "";
+        this.email = "";
+        this.password = "";
+        this.friends = null;
+        this.blocked = null;
+    }
+
+
     public String getUsername() {
         return username;
     }
