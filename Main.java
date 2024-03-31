@@ -8,22 +8,29 @@ public class Main {
         System.out.println("1: Sign Up");
         System.out.println("2: Login");
 
-        boolean loggingIn = false;
-        boolean signingUp = false;
+        boolean loggedIn = false;
         int logChoice = scanner.nextInt();
         scanner.nextLine();
 
-        switch (logChoice) {
-            case 1 -> System.out.println("Enter your");
-            case 2 -> System.out.println("bye");
+        while (!loggedIn) {
+
+            switch (logChoice) {
+                case 1:
+                    System.out.println("Enter your email:");
+                    String email = scanner.nextLine();
+                    System.out.println("Enter your password:");
+                    String password = scanner.nextLine();
+
+                    break;
+
+
+                case 2:
+                    System.out.println("Enter your username:");
+                    System.out.println("Enter your password:");
+                    break;
+            }
+
 
         }
-
-
-
-
-
-
-
     }
 }
