@@ -60,7 +60,7 @@ public class UserProfile {
     }
 
     public String toString() {
-        return "Username: " + username + "\n" + "Email: " + email + "\n" + "Password: " + password + "\n" + "Friends: " + friends.size() + "\n" + "Blocked: " + blocked + "\n" + "---------------";
+        return "Username: " + username + "\n" + "Email: " + email + "\n" + "Password: " + password + "\n" + "Friends: " + friends.size() + "\n" + "Blocked: " + blocked + "\n" + "---------------" + "\n";
     }
 
 
