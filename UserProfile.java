@@ -5,7 +5,7 @@ import java.util.ArrayList;
  *
  * brief description of the program
  *
- * @author your name, section number
+ * @author Team 5, section number
  *
  * @version date of completion
  *
