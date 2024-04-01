@@ -3,11 +3,12 @@ import java.util.ArrayList;
 /**
  * NotFacebook DatabaseInterface
  *
- * brief description of the program
+ * This program is the interface
+ * for the database class.
  *
- * @author your name, section number
+ * @author Team 5, 19
  *
- * @version date of completion
+ * @version April 1, 2024
  *
  */
 
