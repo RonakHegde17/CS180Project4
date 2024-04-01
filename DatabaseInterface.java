@@ -19,7 +19,7 @@ public interface DatabaseInterface {
     public boolean readFile2(String username);
     public boolean readFile3(String username, String password);
     public boolean writeFile();
-    public boolean writeFile1(String username, String Password);
+    public boolean writeFile1(String username, String password);
     public ArrayList<UserProfile> searchUsers(String userSearch);
     public String viewUser(UserProfile user);
     public boolean addUser(UserProfile user);
