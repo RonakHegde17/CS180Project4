@@ -14,7 +14,11 @@ import java.util.ArrayList;
 
 public interface DatabaseInterface {
     public boolean readFile();
+    public boolean readFile1();
+    public boolean readFile2();
+    public boolean readFile3();
     public boolean writeFile();
+    public boolean writeFile1();
     public ArrayList<UserProfile> searchUsers(String userSearch);
     public String viewUser(UserProfile user);
     public boolean addUser(UserProfile user);
