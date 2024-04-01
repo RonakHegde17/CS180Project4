@@ -4,11 +4,11 @@ import java.util.ArrayList;
 /**
  * NotFacebook Database
  *
- * brief description of the program
+ * This program
  *
- * @author your name, section number
+ * @author Team 5, 19
  *
- * @version date of completion
+ * @version April 1, 2024
  *
  */
 
