@@ -1,6 +1,17 @@
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * NotFacebook Database
+ *
+ * brief description of the program
+ *
+ * @author your name, section number
+ *
+ * @version date of completion
+ *
+ */
+
 public class Database implements DatabaseInterface{
     private ArrayList<UserProfile> users;
     private String userIn;
