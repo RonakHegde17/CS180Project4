@@ -30,6 +30,11 @@ public class Database implements DatabaseInterface{
                 }
             }
             bfr.close();
+            for (int i = 0; i < users.size(); i++) {
+                if (users.get(i).getUsername() == null || users.get(i).getUsername().isEmpty()) {
+                    users.remove(users.get(i));
+                }
+            }
             return true;
         } catch (Exception e) {
             e.printStackTrace();
