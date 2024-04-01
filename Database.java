@@ -4,31 +4,98 @@ import java.util.ArrayList;
 /**
  * NotFacebook Database
  *
- * This program creates a database
- * that contains user profiles by
- * reading a file to create users 
- * and then writing to a file the
- * users in the database. This program
- * contains methods that allow the adding
- * and removing of users and the ability
- * to search and view users.
+ * brief description of the program
  *
- * @author Team 5, 19
+ * @author your name, section number
  *
- * @version April 1, 2024
+ * @version date of completion
  *
  */
 
 public class Database implements DatabaseInterface{
     private ArrayList<UserProfile> users;
-    private String userIn;
     private String outputFile;
 
-    public Database(String userIn, String outputFile) {
-        this.userIn = userIn;
-        this.users = null;
+    public Database(String outputFile) {
         this.outputFile = outputFile;
+        this.users = new ArrayList<>();
     }
+
+    public void createFile() { //This method is used to create the database.txt file when none exists
+        try {
+            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, true)));
+            pw.flush();
+            pw.close();
+        } catch (Exception e) {e.printStackTrace();
+        }
+    }
+
+    public boolean writeFile1(String username, String password) {
+        try {
+            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, true)));
+            pw.write("Username: " + username + " " +  "\n"  + "Password: " + password + "\n" + "Friends: " + "0" + "\n" + "---------------" + "\n");
+            pw.flush();
+            pw.close();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean readFile1(String username) {
+        try (BufferedReader br = new BufferedReader(new FileReader(outputFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.startsWith("Username: " + username + " ")) {
+                    System.out.println("Username is already in use!");;
+                    return false;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        return true;
+    }
+
+    public boolean readFile2(String username) {
+        try (BufferedReader br = new BufferedReader(new FileReader(outputFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.startsWith("Username: " + username + " ")) {
+                    return true;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    public boolean readFile3(String username, String password) {
+        try (BufferedReader br = new BufferedReader(new FileReader(outputFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.startsWith("Username: " + username + " ")) {
+                    line = br.readLine();
+                    if (line.startsWith("Password: " + password + " ")) {
+                        return true;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+
+
+
+
 
     public boolean writeFile() {
         try {
@@ -47,14 +114,13 @@ public class Database implements DatabaseInterface{
 
     public boolean readFile() {
         try {
-            BufferedReader bfr = new BufferedReader(new FileReader(userIn));
+            BufferedReader bfr = new BufferedReader(new FileReader(outputFile));
             String line = "";
             while ((line = bfr.readLine()) != null) {
                 try {
                     String[] userProfileStuff = line.split(",", -1);
                     for (int i = 0; i < users.size(); i++) {
-                        if ((userProfileStuff[0].equals(users.get(i).getUsername())) ||
-                                (userProfileStuff[1].equals(users.get(i).getEmail()))) {
+                        if ((userProfileStuff[0].equals(users.get(i).getUsername()))) {
                             throw new Exception();
                         }
                     }
@@ -97,8 +163,7 @@ public class Database implements DatabaseInterface{
         if (!(users.contains(user))) {
             try {
                 for (int i = 0; i < users.size(); i++) {
-                    if ((user.getUsername().equals(users.get(i).getUsername())) ||
-                            (user.getEmail().equals(users.get(i).getEmail()))) {
+                    if ((user.getUsername().equals(users.get(i).getUsername()))) {
                         throw new Exception();
                     }
                 }
