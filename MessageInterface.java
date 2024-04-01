@@ -1,11 +1,12 @@
 /**
  * NotFacebook MessageInterface
  *
- * brief description of the program
+ * This program is the interface
+ * for the message class.
  *
- * @author your name, section number
+ * @author Team 5, 19
  *
- * @version date of completion
+ * @version April 1, 2024
  *
  */
 public interface MessageInterface  {
