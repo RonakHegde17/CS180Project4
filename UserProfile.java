@@ -3,11 +3,11 @@ import java.util.ArrayList;
 /**
  * NotFacebook UserProfile
  *
- * brief description of the program
+ * This class contructs a new UserProfile object with associated information, as well as methods for friends and blocked, and toString. 
  *
- * @author Team 5, section number
+ * @author Team 5, 19
  *
- * @version date of completion
+ * @version April 1, 2024
  *
  */
 public class UserProfile implements UserProfileInterface {
