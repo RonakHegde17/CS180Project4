@@ -3,11 +3,16 @@ import java.util.ArrayList;
 /**
  * NotFacebook UserProfile
  *
- * brief description of the program
+ * This program creates user profiles
+ * by taking in a username, email, and
+ * password. Additionally, this program
+ * contains methods that allow a user
+ * to add and remove friends and block
+ * and unblock users.
  *
- * @author your name, section number
+ * @author Team 5, 19
  *
- * @version date of completion
+ * @version April 1, 2024
  *
  */
 public class UserProfile implements UserProfileInterface {
