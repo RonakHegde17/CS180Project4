@@ -3,22 +3,15 @@ import java.util.ArrayList;
 /**
  * NotFacebook UserProfile
  *
- * This program creates user profiles
- * by taking in a username, email, and
- * password. Additionally, this program
- * contains methods that allow a user
- * to add and remove friends and block
- * and unblock users.
+ * brief description of the program
  *
- * @author Team 5, 19
+ * @author your name, section number
  *
- * @version April 1, 2024
+ * @version date of completion
  *
  */
 public class UserProfile implements UserProfileInterface {
     private String username;
-
-    private String email;
 
     private String password;
 
@@ -26,9 +19,8 @@ public class UserProfile implements UserProfileInterface {
 
     private ArrayList<UserProfile> blocked;
 
-    public UserProfile(String username, String email, String password) {
+    public UserProfile(String username, String password) {
         this.username = username;
-        this.email = email;
         this.password = password;
         this.friends = new ArrayList<UserProfile>();
         this.blocked = new ArrayList<UserProfile>();
@@ -36,7 +28,6 @@ public class UserProfile implements UserProfileInterface {
 
     public UserProfile() {
         this.username = "";
-        this.email = "";
         this.password = "";
         this.friends = null;
         this.blocked = null;
@@ -49,14 +40,6 @@ public class UserProfile implements UserProfileInterface {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPassword() {
@@ -82,34 +65,28 @@ public class UserProfile implements UserProfileInterface {
     public void setBlocked(ArrayList<UserProfile> blocked) {
         this.blocked = blocked;
     }
-    //This method checks if the user has that freind if if not adds them to the friend list
     public void addFriend(UserProfile friend) {
         if (!friends.contains(friend)) {
             friends.add(friend);
         }
     }
-    //This method removes the friend from the list
+
     public void removeFriend(UserProfile friend) {
-        if (friends.contains(friend) {
-            friends.remove(friend);
-        }
-        
+        friends.remove(friend);
     }
-    //This method checks if that user is blocked if not it adds them to the block list
+
     public void addBlocked(UserProfile user) {
         if (!blocked.contains(user)) {
             blocked.add(user);
         }
     }
-    //This method removes the user from the blocked list
+
     public void unblock(UserProfile user) {
-        if (blocked.contains(user) {
-            blocked.remove(user);
-        }
+        blocked.remove(user);
     }
-    //Gives a String representaion of the user info 
+
     public String toString() {
-        return "Username: " + username + "\n" + "Email: " + email + "\n" + "Password: " + password + "\n" + "Friends: " + friends.size() + "\n" + "---------------" + "\n";
+        return "Username: " + username + "\n"  + "Password: " + password + "\n" + "Friends: " + friends.size() + "\n" + "---------------" + "\n";
     }
 
 
