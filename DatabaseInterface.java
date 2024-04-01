@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 
 public interface DatabaseInterface {
+    public void createFile();
     public boolean readFile();
     public boolean readFile1();
     public boolean readFile2();
