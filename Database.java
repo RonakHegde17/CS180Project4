@@ -1,14 +1,30 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 
 public class Database implements DatabaseInterface{
     private ArrayList<UserProfile> users;
     private String userIn;
+    private String outputFile;
 
-    public Database(String userIn) {
+    public Database(String userIn, String outputFile) {
         this.userIn = userIn;
         this.users = null;
+        this.outputFile = outputFile;
+    }
+
+    public boolean writeFile() {
+        try {
+            String line = "";
+            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(outputFile)));
+            for (int i = 0; i < users.size(); i++) {
+                pw.println(users.get(i).toString());
+            }
+            pw.flush();
+            pw.close();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public boolean readFile() {
@@ -24,7 +40,6 @@ public class Database implements DatabaseInterface{
                             throw new Exception();
                         }
                     }
-                    users.add(new UserProfile(userProfileStuff[0], userProfileStuff[1], userProfileStuff[2]));
                 } catch (Exception e) {
                     users.add(new UserProfile());
                 }
