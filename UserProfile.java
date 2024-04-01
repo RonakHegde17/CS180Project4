@@ -82,26 +82,32 @@ public class UserProfile implements UserProfileInterface {
     public void setBlocked(ArrayList<UserProfile> blocked) {
         this.blocked = blocked;
     }
+    //This method checks if the user has that freind if if not adds them to the friend list
     public void addFriend(UserProfile friend) {
         if (!friends.contains(friend)) {
             friends.add(friend);
         }
     }
-
+    //This method removes the friend from the list
     public void removeFriend(UserProfile friend) {
-        friends.remove(friend);
+        if (friends.contains(friend) {
+            friends.remove(friend);
+        }
+        
     }
-
+    //This method checks if that user is blocked if not it adds them to the block list
     public void addBlocked(UserProfile user) {
         if (!blocked.contains(user)) {
             blocked.add(user);
         }
     }
-
+    //This method removes the user from the blocked list
     public void unblock(UserProfile user) {
-        blocked.remove(user);
+        if (blocked.contains(user) {
+            blocked.remove(user);
+        }
     }
-
+    //Gives a String representaion of the user info 
     public String toString() {
         return "Username: " + username + "\n" + "Email: " + email + "\n" + "Password: " + password + "\n" + "Friends: " + friends.size() + "\n" + "---------------" + "\n";
     }
