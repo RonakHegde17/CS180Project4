@@ -1,11 +1,14 @@
 /**
  * NotFacebook Message
  *
- * brief description of the program
+ * This program takes in a string
+ * and creates a message with a
+ * messageID number that can be
+ * used to identify the message.
  *
- * @author your name, section number
+ * @author Team 5, 19
  *
- * @version date of completion
+ * @version April 1, 2024
  *
  */
 public class Message {
