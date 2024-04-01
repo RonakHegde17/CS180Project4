@@ -1,5 +1,16 @@
 import java.util.ArrayList;
 
+/**
+ * NotFacebook Database
+ *
+ * brief description of the program
+ *
+ * @author your name, section number
+ *
+ * @version date of completion
+ *
+ */
+
 public interface DatabaseInterface {
     public boolean readFile();
     public boolean writeFile();
