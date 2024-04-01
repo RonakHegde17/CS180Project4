@@ -1,3 +1,13 @@
+/**
+ * NotFacebook Message
+ *
+ * brief description of the program
+ *
+ * @author your name, section number
+ *
+ * @version date of completion
+ *
+ */
 public class Message {
     private String message;
     private int messageID;
