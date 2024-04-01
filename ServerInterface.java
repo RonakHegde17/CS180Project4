@@ -1,11 +1,12 @@
 /**
  * NotFacebook ServerInterface
  *
- * brief description of the program
+ * This program is the interface
+ * for the server class.
  *
- * @author your name, section number
+ * @author Team 5, 19
  *
- * @version date of completion
+ * @version April 1, 2024
  *
  */
 public interface ServerInterface {
