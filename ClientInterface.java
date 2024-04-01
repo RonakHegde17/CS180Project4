@@ -1,3 +1,13 @@
+/**
+ * NotFacebook ClientInterface
+ *
+ * brief description of the program
+ *
+ * @author your name, section number
+ *
+ * @version date of completion
+ *
+ */
 public interface ClientInterface {
     public void sendMessage(String recipient, String message);
     public void sendMessage(String message);
