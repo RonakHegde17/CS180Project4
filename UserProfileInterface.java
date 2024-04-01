@@ -1,5 +1,16 @@
 import java.util.ArrayList;
 
+/**
+ * NotFacebook UserProfileInterface
+ *
+ * brief description of the program
+ *
+ * @author your name, section number
+ *
+ * @version date of completion
+ *
+ */
+
 public interface UserProfileInterface {
     public String getUsername();
     public void setUsername(String username);
