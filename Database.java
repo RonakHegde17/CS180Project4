@@ -4,11 +4,18 @@ import java.util.ArrayList;
 /**
  * NotFacebook Database
  *
- * brief description of the program
+ * This program creates a database
+ * that contains user profiles by
+ * reading a file to create users 
+ * and then writing to a file the
+ * users in the database. This program
+ * contains methods that allow the adding
+ * and removing of users and the ability
+ * to search and view users.
  *
- * @author your name, section number
+ * @author Team 5, 19
  *
- * @version date of completion
+ * @version April 1, 2024
  *
  */
 
