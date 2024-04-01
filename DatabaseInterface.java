@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * NotFacebook Database
+ * NotFacebook DatabaseInterface
  *
  * brief description of the program
  *
