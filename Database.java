@@ -4,11 +4,11 @@ import java.util.ArrayList;
 /**
  * NotFacebook Database
  *
- * This program
+ * brief description of the program
  *
- * @author Team 5, 19
+ * @author your name, section number
  *
- * @version April 1, 2024
+ * @version date of completion
  *
  */
 
@@ -21,7 +21,7 @@ public class Database implements DatabaseInterface{
         this.users = new ArrayList<>();
     }
 
-    public void createFile() { //This method is used to create the database.txt file when none exists
+    public void createFile() { //THIS METHOD IS USED TO CREATE THE DATABASE.txt FILE WHEN IT DOESN'T EXIST
         try {
             PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, true)));
             pw.flush();
@@ -30,7 +30,7 @@ public class Database implements DatabaseInterface{
         }
     }
 
-    public boolean writeFile1(String username, String password) {
+    public boolean writeFile1(String username, String password) { //THIS METHOD IS USED TO APPEND USER INFORMATION TO THE DATABASE FILE
         try {
             PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, true)));
             pw.write("Username: " + username + " " +  "\n"  + "Password: " + password + " " +  "\n" + "Friends: " + "0" + "\n" + "---------------" + "\n");
@@ -42,7 +42,7 @@ public class Database implements DatabaseInterface{
         }
     }
 
-    public boolean readFile1(String username) {
+    public boolean readFile1(String username) { //THIS METHOD IS USED TO VERIFY DURING SIGNUP WHETHER THE INPUTTED USERNAME ALREADY EXISTS
         try (BufferedReader br = new BufferedReader(new FileReader(outputFile))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -59,7 +59,7 @@ public class Database implements DatabaseInterface{
         return true;
     }
 
-    public boolean readFile2(String username) {
+    public boolean readFile2(String username) { //THIS METHOD IS USED DURING THE LOGIN PROCESS TO VERIFY IF THE INPUTTED USERNAME EXISTS
         try (BufferedReader br = new BufferedReader(new FileReader(outputFile))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -74,7 +74,8 @@ public class Database implements DatabaseInterface{
         return false;
     }
 
-    public boolean readFile3(String username, String password) {
+    public boolean readFile3(String username, String password) { //THIS METHOD IS USED DURING THE LOGIN PROCESS TO FIRST FIND THE USERNAME IN THE DATABASE, 
+        //FIND THE PASSWORD ASSOCIATED WITH IT, AND VERIFY IF IT IS CORRECT OR NOT
         try (BufferedReader br = new BufferedReader(new FileReader(outputFile))) {
             String line;
             while ((line = br.readLine()) != null) {
