@@ -1,5 +1,15 @@
 import java.util.ArrayList;
 
+/**
+ * NotFacebook UserProfile
+ *
+ * brief description of the program
+ *
+ * @author your name, section number
+ *
+ * @version date of completion
+ *
+ */
 public class UserProfile implements UserProfileInterface {
     private String username;
 
@@ -67,7 +77,7 @@ public class UserProfile implements UserProfileInterface {
     public void setBlocked(ArrayList<UserProfile> blocked) {
         this.blocked = blocked;
     }
-        public void addFriend(UserProfile friend) {
+    public void addFriend(UserProfile friend) {
         if (!friends.contains(friend)) {
             friends.add(friend);
         }
@@ -88,7 +98,7 @@ public class UserProfile implements UserProfileInterface {
     }
 
     public String toString() {
-        return "Username: " + username + "\n" + "Email: " + email + "\n" + "Password: " + password + "\n" + "Friends: " + friends.size() + "\n" + "Blocked: " + blocked + "\n" + "---------------" + "\n";
+        return "Username: " + username + "\n" + "Email: " + email + "\n" + "Password: " + password + "\n" + "Friends: " + friends.size() + "\n" + "---------------" + "\n";
     }
 
 
