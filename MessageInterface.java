@@ -9,6 +9,8 @@
  *
  */
 public interface MessageInterface  {
-    public void getMessage();
+    public String getMessage();
     public void setMessage(String message);
+    public int getMessageID();
+    public void setMessageID(int MessageID);
 }
