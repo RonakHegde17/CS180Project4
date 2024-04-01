@@ -33,7 +33,7 @@ public class Database implements DatabaseInterface{
     public boolean writeFile1(String username, String password) {
         try {
             PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, true)));
-            pw.write("Username: " + username + " " +  "\n"  + "Password: " + password + "\n" + "Friends: " + "0" + "\n" + "---------------" + "\n");
+            pw.write("Username: " + username + " " +  "\n"  + "Password: " + password + " " +  "\n" + "Friends: " + "0" + "\n" + "---------------" + "\n");
             pw.flush();
             pw.close();
             return true;
