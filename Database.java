@@ -48,4 +48,13 @@ public class Database implements DatabaseInterface{
             return "User Does Not Exist\n";
         }
     }
+    
+    public boolean addUser(UserProfile user) {
+        if (!(users.contains(user))) {
+            users.add(user);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
