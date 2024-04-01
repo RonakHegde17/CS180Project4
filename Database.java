@@ -18,6 +18,12 @@ public class Database implements DatabaseInterface{
             while ((line = bfr.readLine()) != null) {
                 try {
                     String[] userProfileStuff = line.split(",", -1);
+                    for (int i = 0; i < users.size(); i++) {
+                        if ((userProfileStuff[0].equals(users.get(i).getUsername())) ||
+                                (userProfileStuff[1].equals(users.get(i).getEmail()))) {
+                            throw new Exception();
+                        }
+                    }
                     users.add(new UserProfile(userProfileStuff[0], userProfileStuff[1], userProfileStuff[2]));
                 } catch (Exception e) {
                     users.add(new UserProfile());
@@ -51,13 +57,23 @@ public class Database implements DatabaseInterface{
 
     public boolean addUser(UserProfile user) {
         if (!(users.contains(user))) {
-            users.add(user);
-            return true;
+            try {
+                for (int i = 0; i < users.size(); i++) {
+                    if ((user.getUsername().equals(users.get(i).getUsername())) ||
+                            (user.getEmail().equals(users.get(i).getEmail()))) {
+                        throw new Exception();
+                    }
+                }
+                users.add(user);
+                return true;
+            } catch (Exception e) {
+                return false;
+            }
         } else {
             return false;
         }
     }
-    
+
     public boolean removeUser(UserProfile user) {
         if (users.contains(user)) {
             users.remove(user);
