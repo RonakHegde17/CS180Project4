@@ -44,6 +44,10 @@ This class also contains methods that modify the blocked
 and friend users of that UserProfile. This class also contains
 a toString method that shows a string representaion of that created object.
 
+GUI.java
+This class will implement the transition of user input to the graphical interface that users can interact with.
+This will be implemented towards the end of phase 2/start of phase 3.
+
 UserProfileInterface.java
 ----------
 This is the interface for the UserProfile class,
