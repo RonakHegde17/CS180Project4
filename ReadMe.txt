@@ -1,3 +1,11 @@
+Main.java
+----------
+This class contains the program that allows users to interact with the database,
+such as the signing up, logging in, viewing users, viewing number of friends, logging out, and deleting their account.
+This class acts as the control flow and implementation of the Database and UserProfile classes.
+
+
+
 Database.java
 ----------
 This class contains the program necessary to process files
