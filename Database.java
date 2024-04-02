@@ -6,9 +6,9 @@ import java.util.ArrayList;
  *
  * brief description of the program
  *
- * @author your name, section number
+ * @author Team 5, 19
  *
- * @version date of completion
+ * @version April 1, 2024
  *
  */
 
