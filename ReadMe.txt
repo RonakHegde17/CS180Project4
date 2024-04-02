@@ -4,8 +4,6 @@ This class contains the program that allows users to interact with the database,
 such as the signing up, logging in, viewing users, viewing number of friends, logging out, and deleting their account.
 This class acts as the control flow and implementation of the Database and UserProfile classes.
 
-
-
 Database.java
 ----------
 This class contains the program necessary to process files
@@ -17,6 +15,7 @@ arrayList of all the users that contain what the user searched, for example,
 if a user looked up a name that multiple users have, this method would return
 an array list with all the users that have that name. There is also a view user
 method that shows a users information.
+Testing was done in DatabaseTests.java.
 
 DatabaseTests.java
 ----------
