@@ -26,7 +26,8 @@ There are 5 tests -
 3: When given a username, this tests checks for the correct associated password (This is used to allow login in the actual program)
 4: When given a username, this test attempts to log in with an incorrect associated password (This is used to prevent login in the actual program)
 5: This test will attempt to log in with a username that doesn't exist. This is used to verify the programs ability to check for existing usernames during the login process.
-There are either one or two strings in each test case "username" and "password". Both strings can be modified to whatever the tester wishes to test.
+There are either one or two strings in each test case "username" and "password". Both strings can be modified to test different usernames and passwords
+For example in test 1, inputting "hey" for username and "123" to password should successfully create a new user in the test database text file with username hey and password 123.
 
 DatabaseInterface.java
 ----------
