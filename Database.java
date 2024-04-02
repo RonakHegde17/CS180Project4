@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  */
 
-public class Database implements DatabaseInterface{
+public class Database implements DatabaseInterface {
     private ArrayList<UserProfile> users;
     private String outputFile;
 
@@ -31,14 +31,17 @@ public class Database implements DatabaseInterface{
             PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, true)));
             pw.flush();
             pw.close();
-        } catch (Exception e) {e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-    public boolean writeFile1(String username, String password) { //THIS METHOD IS USED TO APPEND USER INFORMATION TO THE DATABASE FILE
+    public boolean writeFile1(String username, String password) { 
+        //THIS METHOD IS USED TO APPEND USER INFORMATION TO THE DATABASE FILE
         try {
             PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, true)));
-            pw.write("Username: " + username + " " +  "\n"  + "Password: " + password + " " +  "\n" + "Friends: " + "0" + "\n" + "---------------" + "\n");
+            pw.write("Username: " + username + " " +  "\n"  + "Password: " + password + " " + 
+                     "\n" + "Friends: " + "0" + "\n" + "---------------" + "\n");
             pw.flush();
             pw.close();
             return true;
@@ -48,12 +51,13 @@ public class Database implements DatabaseInterface{
     }
 
 
-    public boolean readFile1(String username) { //THIS METHOD IS USED TO VERIFY DURING SIGNUP WHETHER THE INPUTTED USERNAME ALREADY EXISTS
+    public boolean readFile1(String username) { 
+        //THIS METHOD IS USED TO VERIFY DURING SIGNUP WHETHER THE INPUTTED USERNAME ALREADY EXISTS
         try (BufferedReader br = new BufferedReader(new FileReader(outputFile))) {
             String line;
             while ((line = br.readLine()) != null) {
                 if (line.startsWith("Username: " + username + " ")) {
-                    System.out.println("Username is already in use!");;
+                    System.out.println("Username is already in use!");
                     return false;
                 }
             }
@@ -65,7 +69,8 @@ public class Database implements DatabaseInterface{
         return true;
     }
 
-    public boolean readFile2(String username) { //THIS METHOD IS USED DURING THE LOGIN PROCESS TO VERIFY IF THE INPUTTED USERNAME EXISTS
+    public boolean readFile2(String username) { 
+        //THIS METHOD IS USED DURING THE LOGIN PROCESS TO VERIFY IF THE INPUTTED USERNAME EXISTS
         try (BufferedReader br = new BufferedReader(new FileReader(outputFile))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -80,7 +85,8 @@ public class Database implements DatabaseInterface{
         return false;
     }
 
-    public boolean readFile3(String username, String password) { //THIS METHOD IS USED DURING THE LOGIN PROCESS TO FIRST FIND THE USERNAME IN THE DATABASE,
+    public boolean readFile3(String username, String password) { 
+        //THIS METHOD IS USED DURING THE LOGIN PROCESS TO FIRST FIND THE USERNAME IN THE DATABASE,
         //FIND THE PASSWORD ASSOCIATED WITH IT, AND VERIFY IF IT IS CORRECT OR NOT
         try (BufferedReader br = new BufferedReader(new FileReader(outputFile))) {
             String line;
@@ -121,7 +127,8 @@ public class Database implements DatabaseInterface{
 
     }
 
-    public boolean deleteUser(String username) { //THIS METHOD DELETES A USER FROM THE DATABASE BY REWRITING THE OLD FILE TO A NEW ONE, THEN RENAMING IT.
+    public boolean deleteUser(String username) { 
+        //THIS METHOD DELETES A USER FROM THE DATABASE BY REWRITING THE OLD FILE TO A NEW ONE, THEN RENAMING IT.
         File inputFile = new File(outputFile);
         File tempFile = new File("temp.txt");
 
