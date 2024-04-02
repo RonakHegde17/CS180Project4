@@ -1,6 +1,14 @@
 Database.java
 ----------
-
+This class contains the program necessary to process files
+that create user profiles and then write all the user profiles
+created into a new file that represents the database. This class includes
+methods like addUser and removeUser that can alter the users in the
+database. Additionally, there is a searchUsers method that returns an
+arrayList of all the users that contain what the user searched, for example,
+if a user looked up a name that multiple users have, this method would return
+an array list with all the users that have that name. There is also a view user
+method that shows a users information.
 
 DatabaseInterface.java
 ----------
