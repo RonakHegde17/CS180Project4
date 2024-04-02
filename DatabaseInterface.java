@@ -17,6 +17,7 @@ public interface DatabaseInterface {
     public boolean readFile1(String username);
     public boolean readFile2(String username);
     public boolean readFile3(String username, String password);
+    public boolean searchFile(String username);
     public boolean deleteUser(String username);
     public boolean writeFile();
     public boolean writeFile1(String username, String password);
