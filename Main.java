@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * NotFacebook Database
+ * NotFacebook Main
  *
- * brief description of the program
+ * This class contains the main method that allows users to go through the process of signing up, logging in, searching for users, and deleting accounts.
+ * It implements the control flow of the program and is how users will interact with the Database and UserProfile classes in Phase 1.
  *
- * @author Team 5, 19
+ * Ronak Hegde, Keegan Kita, Christian Won
  *
- * @version April 1, 2024
- *
+ * April 1st, 2024
  */
 
 public class Main {
