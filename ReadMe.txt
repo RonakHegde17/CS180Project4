@@ -10,6 +10,17 @@ if a user looked up a name that multiple users have, this method would return
 an array list with all the users that have that name. There is also a view user
 method that shows a users information.
 
+DatabaseTests.java
+----------
+This class contains methods that allow users to test the functionality of the Database class with different inputs.
+There are 5 tests - 
+1: Testing the ability to add new users to a test database file.
+2: Check for existing usernames in the database (This is used in the actual program to prevent duplicate usernames)
+3: When given a username, this tests checks for the correct associated password (This is used to allow login in the actual program)
+4: When given a username, this test attempts to log in with an incorrect associated password (This is used to prevent login in the actual program)
+5: This test will attempt to log in with a username that doesn't exist. This is used to verify the programs ability to check for existing usernames during the login process.
+There are either one or two strings in each test case "username" and "password". Both strings can be modified to whatever the tester wishes to test.
+
 DatabaseInterface.java
 ----------
 This is the interface for the database class,
