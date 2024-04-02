@@ -3,12 +3,11 @@ import java.util.ArrayList;
 /**
  * NotFacebook DatabaseInterface
  *
- * This program is the interface
- * for the database class.
+     * brief description of the program
  *
- * @author Team 5, 19
+ * @author your name, section number
  *
- * @version April 1, 2024
+ * @version date of completion
  *
  */
 
@@ -18,6 +17,7 @@ public interface DatabaseInterface {
     public boolean readFile1(String username);
     public boolean readFile2(String username);
     public boolean readFile3(String username, String password);
+    public boolean deleteUser(String username);
     public boolean writeFile();
     public boolean writeFile1(String username, String password);
     public ArrayList<UserProfile> searchUsers(String userSearch);
