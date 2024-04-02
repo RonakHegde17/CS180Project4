@@ -98,7 +98,6 @@ public class Main {
                     System.out.println("Enter a Username:");
                     searchUser = scanner.nextLine();
                     if (database.searchFile(searchUser)) {
-                        System.out.println("Username: " + searchUser);
                         System.out.println();
                     } else {
                         System.out.println("User not found");
