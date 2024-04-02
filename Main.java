@@ -5,6 +5,17 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * NotFacebook Database
+ *
+ * brief description of the program
+ *
+ * @author Team 5, 19
+ *
+ * @version April 1, 2024
+ *
+ */
+
 public class Main {
     public static void main(String[] args) {
 
