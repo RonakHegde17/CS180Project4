@@ -42,45 +42,6 @@ public class Database implements DatabaseInterface{
         }
     }
 
-    public boolean deleteUser(String username) {
-        File inputFile = new File(outputFile);
-        File tempFile = new File("temp.txt");
-
-        try (BufferedReader br = new BufferedReader(new FileReader(outputFile));
-             PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(tempFile)))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                if (line.startsWith("Username: " + username + " ")) {
-                    for (int i = 0; i < 3; i++) {
-                        br.readLine();
-                    }
-                } else {
-                    pw.println(line);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        if (!inputFile.delete()) {
-            System.out.println("Failed to delete the old file");
-            return false;
-        }
-
-        if (!tempFile.renameTo(inputFile)) {
-            System.out.println("Failed to rename the temporary file");
-            return false;
-        }
-
-
-
-
-
-
-        return true;
-    }
-
-
 
     public boolean readFile1(String username) { //THIS METHOD IS USED TO VERIFY DURING SIGNUP WHETHER THE INPUTTED USERNAME ALREADY EXISTS
         try (BufferedReader br = new BufferedReader(new FileReader(outputFile))) {
@@ -133,12 +94,60 @@ public class Database implements DatabaseInterface{
         return false;
     }
 
+    public boolean searchFile(String searchUser) {
+        try (BufferedReader br = new BufferedReader(new FileReader(outputFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.startsWith("Username: " + searchUser + " ")) {
+                    line = br.readLine();
+                    line = br.readLine();
+                    if (line.startsWith("Friends: ")) {
+                        System.out.println("Username: " + searchUser);
+                        System.out.println(line);
+                        return true;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        return false;
 
+    }
 
+    public boolean deleteUser(String username) { //THIS METHOD DELETES A USER FROM THE DATABASE BY REWRITING THE OLD FILE TO A NEW ONE, THEN RENAMING IT.
+        File inputFile = new File(outputFile);
+        File tempFile = new File("temp.txt");
 
+        try (BufferedReader br = new BufferedReader(new FileReader(outputFile));
+             PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(tempFile)))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.startsWith("Username: " + username + " ")) {
+                    for (int i = 0; i < 3; i++) {
+                        br.readLine();
+                    }
+                } else {
+                    pw.println(line);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        if (!inputFile.delete()) {
+            System.out.println("Failed to delete the old file");
+            return false;
+        }
 
+        if (!tempFile.renameTo(inputFile)) {
+            System.out.println("Failed to rename the temporary file");
+            return false;
+        }
+
+        return true;
+    }
 
     public boolean writeFile() {
         try {
