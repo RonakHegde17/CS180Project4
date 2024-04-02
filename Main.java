@@ -2,6 +2,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +10,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         boolean loggedIn = false;
+        boolean exit = false;
         String email;
         String username = "";
         String password = "";
@@ -16,9 +18,12 @@ public class Main {
         boolean validUsername;
         boolean validPassword;
         int mainMenuChoice;
+        int deleteChoice;
 
         Database database = new Database("database.txt");
         database.createFile();
+
+
 
 
 
@@ -82,11 +87,10 @@ public class Main {
         }
 
         while (loggedIn) {
-
-
-            System.out.println("1: View Account Details");
+            System.out.println("1: View Account");
             System.out.println("2: View Friends");
             System.out.println("3: Logout");
+            System.out.println("4: Delete Account");
             mainMenuChoice = scanner.nextInt();
             scanner.nextLine();
             switch (mainMenuChoice) {
@@ -101,6 +105,17 @@ public class Main {
                 case 3:
                     System.out.println("Logging Out...");
                     loggedIn = false;
+                case 4:
+                    System.out.println("Are you sure you want to delete your account?");
+                    System.out.println("1: No");
+                    System.out.println("2: Yes");
+                    deleteChoice = scanner.nextInt();
+                    scanner.nextLine();
+                    if (deleteChoice == 2) {
+                        System.out.println("Deleting...");
+                        database.deleteUser(username);
+                        loggedIn = false;
+                    }
             }
         }
     }
