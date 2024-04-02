@@ -2,15 +2,15 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- * NotFacebook Database
+ * NotFacebook DatabaseTests
+ * This program contains tests to verify the functionality of the database methods.
+ * It contains 5 tests, checking the ability to recognize existing usernames, correct login info, and addition of new users into the database
+ * @author Team 5, 19
  *
- * brief description of the program
- *
- * @author your name, section number
- *
- * @version date of completion
+ * @version April 1, 2024
  *
  */
+
 
 public class Database implements DatabaseInterface{
     private ArrayList<UserProfile> users;
