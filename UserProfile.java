@@ -3,7 +3,8 @@ import java.util.ArrayList;
 /**
  * NotFacebook UserProfile
  *
- * This class contructs a new UserProfile object with associated information, as well as methods for friends and blocked, and toString. 
+ * This class contructs a new UserProfile object with associated 
+ * information, as well as methods for friends and blocked, and toString. 
  *
  * @author Team 5, 19
  *
@@ -86,7 +87,8 @@ public class UserProfile implements UserProfileInterface {
     }
 
     public String toString() {
-        return "Username: " + username + "\n"  + "Password: " + password + "\n" + "Friends: " + friends.size() + "\n" + "---------------" + "\n";
+        return "Username: " + username + "\n"  + "Password: " + password + 
+            "\n" + "Friends: " + friends.size() + "\n" + "---------------" + "\n";
     }
 
 
